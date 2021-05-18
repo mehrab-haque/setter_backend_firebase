@@ -9,6 +9,7 @@ const SQL_LOG_URL='http://buetedu1-env.eba-zxgyn7t7.ap-south-1.elasticbeanstalk.
 exports.registerUser = functions.auth.user().onCreate((user) => {
   if('displayName' in user && user.displayName!==null){
     //console.log(user)
+
     var userData={
       name:user.displayName,
       timestamp:Date.now()
